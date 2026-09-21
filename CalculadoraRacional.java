@@ -86,7 +86,7 @@ public class CalculadoraRacional implements Racional{
      * "numerador/denominador"
      */
     public String toString(){
-        return toString();
+        return numerador + "/" + denominador;
     }
 
     public int getDenominador() {
