@@ -78,6 +78,10 @@ public class CalculadoraRacional implements Racional{
      * Invariante de representacion, chequea que el denominador sea diferente de 0
      */
     public boolean repOk(){
+       if(denominador == 0){
+            return false;
+        }
+
         return true;
     }
 
