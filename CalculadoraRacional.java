@@ -44,7 +44,13 @@ public class CalculadoraRacional implements Racional{
      * Multiplica la instancia actual con el racional r.
      */
     public void mult(Racional r){
+        // a * c / b * d
 
+        int numeradorNuevo = numerador * r.getNumerador();
+        int denominadorNuevo = denominador * r.getDenominador();
+
+        numerador = numeradorNuevo;
+        denominador = denominadorNuevo;
     }
 
     /**
