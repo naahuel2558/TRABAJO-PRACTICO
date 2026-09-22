@@ -20,9 +20,16 @@ public class PilaDoblementeEnlazada<T> implements Pila<T> {
     }
 
     @Override
-    public void apilar(T elem) throws IllegalStateException {
-        // TODO Implementar este método y eliminar la línea siguiente
-        throw new UnsupportedOperationException("Unimplemented method 'apilar'");
+   public void apilar(T elem) throws IllegalStateException {
+        NodoPila<T> nuevoNodo = new NodoPila<>(fin, elem, null);
+
+        if(esVacia()){
+            inicio = nuevoNodo;
+            fin = nuevoNodo;
+        } else {
+            fin.setNext(nuevoNodo);
+            fin = nuevoNodo;
+        }
     }
 
     @Override
