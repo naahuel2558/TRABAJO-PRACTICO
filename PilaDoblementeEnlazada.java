@@ -15,21 +15,20 @@ public class PilaDoblementeEnlazada<T> implements Pila<T> {
 
     @Override
     public T tope() throws IllegalStateException {
-        // TODO Implementar este método y eliminar la línea siguiente
-        throw new UnsupportedOperationException("Unimplemented method 'tope'");
+        if(esVacia()){
+            throw new IllegalStateException("La pila esta vacia");
+        }
+
+        T elem = fin.getItem();
+        
+        return elem;
+        
     }
 
     @Override
-   public void apilar(T elem) throws IllegalStateException {
-        NodoPila<T> nuevoNodo = new NodoPila<>(fin, elem, null);
-
-        if(esVacia()){
-            inicio = nuevoNodo;
-            fin = nuevoNodo;
-        } else {
-            fin.setNext(nuevoNodo);
-            fin = nuevoNodo;
-        }
+    public void apilar(T elem) throws IllegalStateException {
+        // TODO Implementar este método y eliminar la línea siguiente
+        throw new UnsupportedOperationException("Unimplemented method 'apilar'");
     }
 
     @Override
@@ -40,8 +39,15 @@ public class PilaDoblementeEnlazada<T> implements Pila<T> {
 
     @Override
     public void imprimir() {
-        // TODO Implementar este método y eliminar la línea siguiente
-        throw new UnsupportedOperationException("Unimplemented method 'imprimir'");
-    }
+        if(esVacia()){
+            System.out.println("No se pueden mostrar los elementos de la lista ya que es vacia");
+        }else{
+            NodoPila<T> nodoActual = fin;
 
+            while (nodoActual != null) {
+                System.out.println(nodoActual.getItem());
+                nodoActual = nodoActual.getPrev();
+            }
+        }
+    }
 }
